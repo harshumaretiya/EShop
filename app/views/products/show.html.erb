@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="col-md-6">
+<%= image_tag @product.image.url(:large) ,class: "img-fluid card-img-top", alt:"..." %>
+</div>
+<div class="mx-auto col-md-6" style="width: 200px;">
+<p>
+  <strong>Product name:</strong>
+  <%= @product.product_name %>
+</p>
+
+<p>
+  <strong>Product price:</strong>
+  <%= @product.price %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+</div>
+</div>

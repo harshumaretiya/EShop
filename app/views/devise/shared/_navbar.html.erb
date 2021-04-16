@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">E-Shop</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <% if user_signed_in? %>
+    <li class="nav-item active">
+      <%= link_to "Home", root_path, class:"nav-link" %>
+    </li>
+
+    <% if current_user %>
+      <li class="nav-item"><%= link_to 'Edit', edit_user_registration_path, class:"nav-link " %></li>
+      <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, method: :delete,class:"nav-link" %></li>
+      <li class="nav-item"><%= link_to 'Cart', carts_path,class:"nav-link" %></li>
+      
+      <% end %>
+      <% else %>
+      <li class="nav-item"><%= link_to 'Sign in', new_user_session_path,class:"nav-link" %></li>
+      <li class="nav-item"><%= link_to 'Sign Up', new_user_registration_path,class:"nav-link " %></li>
+    
+      
+     
+    
+    
+  <% end %>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Dropdown link
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+  </ul>
+</nav>

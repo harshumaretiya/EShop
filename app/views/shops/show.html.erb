@@ -1,0 +1,25 @@
+<h1>Shops#show</h1>
+<p>Find me in app/views/shops/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+
+
+<div class= "row">
+  <div class="col-md-6">
+    <%= image_tag @product.image.url(:large),class: "img-fluid" %>
+  </div>
+
+  <div class="mx-auto col-md-6" style="width: 200px;">
+    <p>
+      <strong>Title:</strong>
+      <%= @product.product_name %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @product.price %>
+    </p>
+
+    <%= link_to 'Back', root_path %>
+  </div>
+</div>
